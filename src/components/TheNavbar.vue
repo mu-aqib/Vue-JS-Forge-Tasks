@@ -9,8 +9,8 @@
 <template>
     <nav>
         <div class="flex border-bottom border-2 p-4 justify-between">
-        
-            <img src="https://vuejsforge.com/images/logo-vuejs-forge.svg" alt="logo-img" width="150">
+            <AppImage src="https://vuejsforge.com/images/logo-vuejs-forge.svg" alt="logo-img" width="150" />
+            
             <div>
                 <button class="mr-4 text-[#ff6538]" ref="teamButton" @click="showTeamsPopup = !showTeamsPopup">
                     <span class="k-icon k-i-ungroup"></span>
