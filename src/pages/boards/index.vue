@@ -28,17 +28,12 @@
         },
     ]);
 
-    const createBoard = ()=>{
-        // 
-    }
 </script>
 
 <template>
   <h1 class="text-3xl mb-5 mt-3">Boards</h1>
-  <div class="flex">
+  <div class="flex flex-row">
     <BoardCard v-for="board in boards" :key="board.id" :board="board" />
-    <button class="text-gray-500" @click="createBoard()">
-      <span>New Board +</span>
-    </button>
+    
   </div>
 </template>  

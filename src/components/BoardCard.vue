@@ -14,21 +14,13 @@
 </script>
 
 <template>
-    <router-link :to="`boards/${board.id}`" class="block w-96">
-        <!-- <KCard class="m-5">
-            <AppImage v-if="board.image" :src="board.image?.downloadUrl" width="384" class="aspect-video w-full" />
-            <div v-else class="aspect-video w-full" :style="{ backgroundColor: randomColor }"></div>
-            <KCardTitle class="p-2">
-                <span class="text-gray-700 text-xl">{{ board.title }}</span>
-            </KCardTitle>
-        </KCard> -->
+    <router-link :to="`boards/${board.id}`" class="block w-full">
         <KCard class="m-5">
-            <AppImage v-if="board.image" :src="board.image?.downloadUrl" width="380" class="aspect-video w-full" />
+            <AppImage v-if="board.image" :src="board.image?.downloadUrl" width="" class="aspect-video w-full" />
             <div v-else class="aspect-video w-full" :style="{ backgroundColor: randomColor }"></div>
             <KCardTitle class="p-2">
                 <span class="text-gray-700 text-xl">{{ board.title }}</span>
             </KCardTitle>
         </KCard>
-        
     </router-link>
 </template>

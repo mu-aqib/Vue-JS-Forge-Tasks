@@ -14,6 +14,7 @@
     } from "vue";
 
     const router = useRouter();
+    const selectedId = ref(0);
     const expanded = ref(true);
     const expandedIcon = computed( () => 
         expanded.value ? "k-i-arrow-chevron-left" : "k-i-arrow-chevron-right"
@@ -52,13 +53,19 @@
     // destructing of object and add extra security layer of typescript
     const onSelect = ({ itemIndex }: { itemIndex: number }) => {
         const item = items.value[itemIndex];
+        selectedId.value = itemIndex;
         if (item.data.path) router.push(item.data.path);
         if (typeof item.data.action === "function") item.data.action();
     }
 </script>
 
 <template>
-    <Drawer class="h-[90vh]" :expanded="expanded" position="start" mode="push" :mini="true" :items="items"
+    <Drawer class="h-[90vh]" :expanded="expanded" position="start" mode="push" :mini="true" :items="
+        items.map((item, index) => ({
+          ...item,
+          selected: index === selectedId,
+        }))
+      "
         @select="onSelect">
         <DrawerContent>
             <div class="px-5">
